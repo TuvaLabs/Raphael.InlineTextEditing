@@ -73,9 +73,11 @@
 				subject.node.removeAttribute('transform');
 
 				var originalBbox  = subject._getBBox();
-				var width         = originalBbox.width;
+				//var width         = originalBbox.width;
+				var width         = 300;
 				var height        = originalBbox.height;
-				var x             = container.offsetLeft + subject.attrs.x + translateX;
+				// var x             = container.offsetLeft + subject.attrs.x + translateX;
+				var x             = (subject.attrs.x - width/2) + translateX; //+ container.offsetLeft;
 				var y             = container.offsetTop + subject.attrs.y - height / 2 + translateY;
 				var sTransform    = '';
 				var sOrigin       = 'center center';
@@ -162,7 +164,12 @@
 			stopEditing: function(){
 
 				// Set the new the value
-				subject.attr("text", this.input.value);
+				// subject.attr("text", this.input.value);
+				var text = this.input.value;
+				if ( text == "" ){
+			        text = "Title";
+				}
+				subject.attr("text", text);
 
 				// Show the text element
 				subject.show();
@@ -185,7 +192,9 @@
 				this.input.style.width = tmp.offsetWidth + "px";
 				this.input.style.height = tmp.offsetHeight + "px";
 
-				tmp.parentNode.removeChild(tmp);
+				// On every key down, it shrinks the width, ignoring it for now.
+				//this.input.style.width = tmp.offsetWidth + "px";
+				//this.input.style.height = tmp.offsetHeight + "px";
 			}
 		};
 
