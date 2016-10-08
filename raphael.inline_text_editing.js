@@ -189,12 +189,11 @@
 
 				this.input.parentNode.appendChild(tmp);
 
-				this.input.style.width = tmp.offsetWidth + "px";
-				this.input.style.height = tmp.offsetHeight + "px";
-
 				// On every key down, it shrinks the width, ignoring it for now.
 				//this.input.style.width = tmp.offsetWidth + "px";
 				//this.input.style.height = tmp.offsetHeight + "px";
+
+				tmp.parentNode.removeChild(tmp);
 			}
 		};
 
