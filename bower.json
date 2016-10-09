@@ -1,0 +1,17 @@
+{
+  "name": "Raphael.InlineTextEditing",
+  "homepage": "https://github.com/TuvaLabs/Raphael.InlineTextEditing",
+  "authors": [
+    "manuquentin"
+  ],
+  "description": "Inline text editing inside raphael component",
+  "main": "",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
